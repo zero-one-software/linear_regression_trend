@@ -13,12 +13,12 @@ module LinearRegressionTrend
     # Pass in an array of values to get the regression on
     def initialize y_values
       @y_values = y_values
-      @size = @y_values.size
+      @size     = @y_values.size
       @x_values = (1..@size).to_a
 
       #initialize everything to 0
-      sum_x = 0
-      sum_y = 0
+      sum_x  = 0
+      sum_y  = 0
       sum_xx = 0
       sum_xy = 0
 
@@ -31,7 +31,7 @@ module LinearRegressionTrend
       end
 
       # calculate the slope
-      @slope = 1.0 * ((@size * sum_xy) - (sum_x * sum_y)) / ((@size * sum_xx) - (sum_x * sum_x))
+      @slope     = 1.0 * ((@size * sum_xy) - (sum_x * sum_y)) / ((@size * sum_xx) - (sum_x * sum_x))
       @intercept = 1.0 * (sum_y - (@slope * sum_x)) / @size
     end
 
@@ -78,12 +78,14 @@ module LinearRegressionTrend
 
     private
     def stabilize(values)
-      n = values.length
-      sum = 0
+      n      = values.length
+      sum    = 0
       target = 0
+
       values.each_with_index do |value, i|
         sum += (n - (2 * i)) * value
       end
+
       target = 1.0 * sum / n if n > 0
       target
     end
