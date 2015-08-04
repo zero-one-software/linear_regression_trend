@@ -24,28 +24,28 @@ module LinearRegressionTrend
 
       # calculate the sums
       @y_values.zip(@x_values).each do |y, x|
-        sum_xy += x*y 
-        sum_xx += x*x 
+        sum_xy += x*y
+        sum_xx += x*x
         sum_x  += x
         sum_y  += y
-      end 
+      end
 
       # calculate the slope
       @slope = 1.0 * ((@size * sum_xy) - (sum_x * sum_y)) / ((@size * sum_xx) - (sum_x * sum_x))
       @intercept = 1.0 * (sum_y - (@slope * sum_x)) / @size
-    end 
+    end
 
     # Get the y-axis values of the trend line
     def trend
       return @x_values.map { |x| predict(x) }
-    end 
+    end
 
     # Get the Y value for any given X value
     # from y = mx + b, or
     # y = slope * x + intercept
-    def predict( x ) 
+    def predict( x )
       @slope * x + @intercept
-    end 
+    end
 
     # Get the "next" value if the sequence
     # was continued one more element
@@ -61,7 +61,7 @@ module LinearRegressionTrend
     def stabilize_over_all
       target = stabilize @y_values
       target
-    end 
+    end
 
     # Determine the target needed to stabilize
     # the slope back to 0, assuming slope is
@@ -74,17 +74,17 @@ module LinearRegressionTrend
       values = @y_values.last(n-1) if n - 1 >= 0
       target = stabilize values
       target
-    end 
+    end
 
     private
     def stabilize(values)
       n = values.length
-      sum = 0 
-      target = 0 
+      sum = 0
+      target = 0
       values.each_with_index do |value, i|
         sum += (n - (2 * i)) * value
-      end 
-      target = 1.0 * sum / n if n > 0 
+      end
+      target = 1.0 * sum / n if n > 0
       target
     end
   end
