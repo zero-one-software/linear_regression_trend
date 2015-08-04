@@ -1,4 +1,4 @@
-# LinearRegressionTrend
+# LinearRegressionTrend [![Build Status](https://travis-ci.org/zero-one-software/linear_regression_trend.svg)](https://travis-ci.org/zero-one-software/linear_regression_trend)
 
 Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/linear_regression_trend`. To experiment with that code, run `bin/console` for an interactive prompt.
 
