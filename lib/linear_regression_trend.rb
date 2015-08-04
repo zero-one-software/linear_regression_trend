@@ -37,7 +37,7 @@ module LinearRegressionTrend
 
     # Get the y-axis values of the trend line
     def trend
-      return @x_values.map { |x| predict(x) }
+      @x_values.map { |x| predict(x) }
     end
 
     # Get the Y value for any given X value
@@ -59,8 +59,7 @@ module LinearRegressionTrend
     # the number needed to have stabilized slope
     # inclusive of all values in the set
     def stabilize_over_all
-      target = stabilize @y_values
-      target
+      stabilize @y_values
     end
 
     # Determine the target needed to stabilize
