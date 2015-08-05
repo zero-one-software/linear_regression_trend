@@ -1,4 +1,4 @@
-# Linear Regression Trend Calculator [![Build Status](https://travis-ci.org/zero-one-software/linear_regression_trend.svg)](https://travis-ci.org/zero-one-software/linear_regression_trend)
+# Linear Regression Trend Calculator [![Build Status](https://travis-ci.org/zero-one-software/linear_regression_trend.svg)](https://travis-ci.org/zero-one-software/linear_regression_trend) [![Code Climate](https://codeclimate.com/github/zero-one-software/linear_regression_trend/badges/gpa.svg)](https://codeclimate.com/github/zero-one-software/linear_regression_trend)
 
 This is a simple gem to help calculate linear regression trendlines for a given list of samples.
 
