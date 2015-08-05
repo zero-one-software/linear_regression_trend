@@ -14,7 +14,6 @@ Gem::Specification.new do |spec|
   spec.license       = "MIT"
 
   spec.files         = `git ls-files -z`.split("\x0").reject { |f| f.match(%r{^(test|spec|features)/}) }
-  spec.bindir        = "exe"
   spec.executables   = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
   spec.require_paths = ["lib"]
 
@@ -26,5 +25,4 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "iruby"
   spec.add_development_dependency "nyaplot"
   spec.add_development_dependency "awesome_print"
-
 end
