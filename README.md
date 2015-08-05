@@ -1,8 +1,6 @@
-# LinearRegressionTrend [![Build Status](https://travis-ci.org/zero-one-software/linear_regression_trend.svg)](https://travis-ci.org/zero-one-software/linear_regression_trend)
+# Linear Regression Trend Calculator [![Build Status](https://travis-ci.org/zero-one-software/linear_regression_trend.svg)](https://travis-ci.org/zero-one-software/linear_regression_trend)
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/linear_regression_trend`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+This is a simple gem to help calculate linear regression trendlines for a given list of samples.
 
 ## Installation
 
@@ -22,18 +20,25 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+```ruby
+my_array_of_samples = [10, 14, 18, 22, 26]
+trender = LinearRegressionTrend::Calculator.new(my_array_of_samples)
+
+trended_samples = trender.trend     # => [array of trend points]
+trend_slope     = trender.slope     # => 4
+trend_intercept = trender.intercept # => 6
+```
 
 ## Development
 
-After checking out the repo, run `bin/setup` to install dependencies. Then, run `bin/console` for an interactive prompt that will allow you to experiment.
-
-To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release` to create a git tag for the version, push git commits and tags, and push the `.gem` file to [rubygems.org](https://rubygems.org).
+Check out the tests in the /spec dir, and also install iRuby notebook, and take a look at the live documentation in /doc.
 
 ## Contributing
 
-1. Fork it ( https://github.com/[my-github-username]/linear_regression_trend/fork )
+1. Fork it ( https://github.com/zero-one-software/linear_regression_trend/fork )
 2. Create your feature branch (`git checkout -b my-new-feature`)
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)
-5. Create a new Pull Request
+5. Add some tests
+6. Create a new Pull Request
+7. Do a happy dance
