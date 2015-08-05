@@ -2,6 +2,10 @@
 
 This is a simple gem to help calculate linear regression trendlines for a given list of samples.
 
+## Note
+
+This gem was created [using this gist.](https://gist.github.com/scottsbaldwin/1733588) originally [authored by Scott Baldwin.](https://github.com/scottsbaldwin). Thanks dude.
+
 ## Installation
 
 Add this line to your application's Gemfile:
