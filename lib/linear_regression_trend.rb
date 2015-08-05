@@ -71,11 +71,12 @@ module LinearRegressionTrend
     def stabilize_over_n_values(n)
       values = []
       values = @y_values.last(n-1) if n - 1 >= 0
-      target = stabilize values
-      target
+
+      stabilize values
     end
 
     private
+
     def stabilize(values)
       n      = values.length
       sum    = 0
