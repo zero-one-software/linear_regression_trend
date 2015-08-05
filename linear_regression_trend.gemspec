@@ -10,6 +10,7 @@ Gem::Specification.new do |spec|
   spec.email         = ["gee.forr@gmail.com"]
 
   spec.summary       = 'A library for calculating linear trend regressions against a time series data set'
+  spec.description   = 'A simple library for calculating linear trend regressions against a time series data set. See README for more info'
   spec.homepage      = "https://github.com/zero-one-software/linear_regression_trend"
   spec.license       = "MIT"
 
@@ -21,8 +22,8 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "rake",          "~> 10.0"
   spec.add_development_dependency "pry",           "~> 0.10.1"
   spec.add_development_dependency "rspec",         "~> 3.3"
-  spec.add_development_dependency "guard-rspec",   "~> 4.6.4"
+  spec.add_development_dependency "guard-rspec",   "~> 4.6"
   spec.add_development_dependency "iruby",         "~> 0.2.7"
   spec.add_development_dependency "nyaplot",       "~> 0.1.5"
-  spec.add_development_dependency "awesome_print", "~> 1.2.0"
+  spec.add_development_dependency "awesome_print", "~> 1.2"
 end
