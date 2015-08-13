@@ -47,4 +47,19 @@ describe LinearRegressionTrend do
       end
     end
   end
+
+  context "for non-negative trends" do
+    let(:known_ys) { [1,2,3,0,10,18,18,18,1,1,1,1,0.5,0.5,0.5,0.5,05,0.25,0.25,0.1,0.1,0,0,0,0] }
+    subject        { LinearRegressionTrend::Calculator.new(known_ys, non_negative: true) }
+
+    it "should stop at 0 for descending trends" do
+      expect(subject.slope).to eq -0.3467307692307691
+
+      [24, 23, 22].each do |zeroed_trend_point|
+        expect(subject.trend[zeroed_trend_point]).to eq 0
+      end
+
+      expect(subject.trend[21]).to be > 0
+    end
+  end
 end
