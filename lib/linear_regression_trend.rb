@@ -44,8 +44,11 @@ module LinearRegressionTrend
     # Get the Y value for any given X value
     # from y = mx + b, or
     # y = slope * x + intercept
-    def predict( x )
-      @slope * x + @intercept
+    def predict(x)
+      predicted = @slope * x + @intercept
+
+      return 0 if predicted < 0 and @no_negs
+      return predicted
     end
 
     # Get the "next" value if the sequence
