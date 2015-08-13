@@ -15,6 +15,7 @@ module LinearRegressionTrend
       @y_values = y_values
       @size     = @y_values.size
       @x_values = (1..@size).to_a
+      @no_negs  = non_negative
 
       #initialize everything to 0
       sum_x  = 0
