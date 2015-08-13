@@ -11,7 +11,7 @@ module LinearRegressionTrend
     attr_accessor :slope, :intercept
 
     # Pass in an array of values to get the regression on
-    def initialize y_values
+    def initialize(y_values, non_negative: false)
       @y_values = y_values
       @size     = @y_values.size
       @x_values = (1..@size).to_a
