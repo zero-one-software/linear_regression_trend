@@ -62,4 +62,16 @@ describe LinearRegressionTrend do
       expect(subject.trend[21]).to be > 0
     end
   end
+
+  context "when forecasting values" do
+    context "when trending upward" do
+
+    end
+
+    context "when trending downward" do
+      it "should trend correctly"
+
+      it "should stop at 0 if non negative trends are requested"
+    end
+  end
 end
