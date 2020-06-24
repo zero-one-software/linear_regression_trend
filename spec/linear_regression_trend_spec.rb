@@ -1,13 +1,13 @@
 require 'spec_helper'
 
-describe LinearRegressionTrend do
+describe LinearRegressionTrend::Calculator do
   it 'has a version number' do
     expect(LinearRegressionTrend::VERSION).not_to be nil
   end
 
   context "for simple and linear data sets" do
     let(:known_ys) { [10, 14, 18, 22, 26] }
-    subject        { LinearRegressionTrend::Calculator.new(known_ys) }
+    subject        { described_class.new(known_ys) }
 
     it 'calculates the slope' do
       expect(subject.slope).to eq 4
@@ -21,7 +21,7 @@ describe LinearRegressionTrend do
   context "for simple and non-linear data sets" do
     context "that have a descending trend" do
       let(:known_ys) { [1, 2, 3, 6, 10, 11, 12, 12, 12, 12, 15, 18, 18, 16, 16, 15, 14, 11, 9, 9, 7, 4, 2, 1, 1] }
-      subject        { LinearRegressionTrend::Calculator.new(known_ys) }
+      subject        { described_class.new(known_ys) }
 
       it 'calculates the slope and intercept' do
         expect(subject.slope).to     eq -0.06384615384615384
@@ -35,7 +35,7 @@ describe LinearRegressionTrend do
 
     context "that have an ascending trend" do
       let(:known_ys) { [1, 2, 3, 6, 10, 11, 12, 12, 12, 12, 15, 18, 18, 16, 16, 15, 14, 11, 9, 9, 7, 4, 2, 1, 1].reverse }
-      subject        { LinearRegressionTrend::Calculator.new(known_ys) }
+      subject        { described_class.new(known_ys) }
 
       it 'calculates the slope and intercept' do
         expect(subject.slope).to     eq 0.06384615384615384
@@ -50,7 +50,7 @@ describe LinearRegressionTrend do
 
   context "for non-negative trends" do
     let(:known_ys) { [1,2,3,0,10,18,18,18,1,1,1,1,0.5,0.5,0.5,0.5,05,0.25,0.25,0.1,0.1,0,0,0,0] }
-    subject        { LinearRegressionTrend::Calculator.new(known_ys, non_negative: true) }
+    subject        { described_class.new(known_ys, non_negative: true) }
 
     it "should stop at 0 for descending trends" do
       expect(subject.slope).to eq -0.3467307692307691
@@ -65,6 +65,9 @@ describe LinearRegressionTrend do
 
   context "when forecasting values" do
     context "when trending upward" do
+      subject { described_class.new(known_ys) }
+
+      let(:known_ys) { [1, 2, 3, 6, 10, 11, 12, 12, 12, 12, 15, 18, 18, 16, 16, 15, 14, 11, 9, 9, 7, 4, 2, 1, 1].reverse }
 
     end
 
