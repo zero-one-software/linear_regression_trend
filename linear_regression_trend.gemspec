@@ -19,11 +19,12 @@ Gem::Specification.new do |spec|
   spec.require_paths = ["lib"]
 
   spec.add_development_dependency "bundler",       "~> 1.9"
-  spec.add_development_dependency "rake",          "~> 10.0"
-  spec.add_development_dependency "pry",           "~> 0.10.1"
-  spec.add_development_dependency "rspec",         "~> 3.3"
-  spec.add_development_dependency "guard-rspec",   "~> 4.6"
-  spec.add_development_dependency "iruby",         "~> 0.2.7"
-  spec.add_development_dependency "nyaplot",       "~> 0.1.5"
-  spec.add_development_dependency "awesome_print", "~> 1.2"
+  spec.add_development_dependency "rake",          "~> 13.0"
+  spec.add_development_dependency "pry",           "~> 0.13.1"
+  spec.add_development_dependency "rspec",         "~> 3.9"
+  spec.add_development_dependency "guard-rspec",   "~> 4.7.3"
+  spec.add_development_dependency "cztop",         "~> 0.14.1"
+  spec.add_development_dependency "iruby",         "~> 0.4.0"
+  spec.add_development_dependency "nyaplot",       "~> 0.1.6"
+  spec.add_development_dependency "awesome_print", "~> 1.8.0"
 end
