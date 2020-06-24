@@ -46,6 +46,22 @@ trend_slope     = trender.slope     # => a negative number, indicating a descend
 trended_samples.last == 0           # => true, would've be -0.8927 otherwise
 ```
 
+## Usage: Forecasting values
+
+Let's assume you're have a value for each day of the month, and it's currently the middle of the month. If you want to know what the trend will look like for
+the remainder of the month, you can forecast the trend past the samples supplied.
+
+```ruby
+samples = [10, 14, 18, 22, 26, 15, 19, 12, 1, 39, 31, 33, 16, 9, 12] # 15 days of samples
+trender = LinearRegressionTrend::Calculator.new(samples)
+
+forecast = trender.forecast_next(15) # => [20.267, 20.492, 20.717, 20.942, 21.167, 21.392, 21.617, 21.842, 22.067, 22.292, 22.517, 22.742, 22.967, 23.192, 23.417]
+```
+
+In this example, the actual trend ends at `20.042`, and the forecast continues smoothly using the same slope from that point on.
+
+This functionality will obey the `non_negative` flag's setting and forecast down to `0` if set.
+
 ## Development and extra documentation
 
 Check out the tests in the /spec dir, and also install iRuby notebook, and **take a look at the live documentation in /doc.**
