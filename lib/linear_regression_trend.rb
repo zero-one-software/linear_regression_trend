@@ -41,6 +41,13 @@ module LinearRegressionTrend
       @x_values.map { |x| predict(x) }
     end
 
+    def forecast_next(n = 1)
+      start_val = @size + 1
+      stop_val  = @size + n.to_i
+
+      (start_val..stop_val).to_a.map { |x| predict(x) }
+    end
+
     # Get the Y value for any given X value
     # from y = mx + b, or
     # y = slope * x + intercept
