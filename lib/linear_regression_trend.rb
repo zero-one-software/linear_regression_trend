@@ -48,7 +48,8 @@ module LinearRegressionTrend
       predicted = @slope * x + @intercept
 
       return 0 if predicted < 0 and @no_negs
-      return predicted
+
+      predicted
     end
 
     # Get the "next" value if the sequence
